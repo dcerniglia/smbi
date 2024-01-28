@@ -10,13 +10,13 @@ export default function Card({
   date?: Date;
 }) {
   return (
-    <div className="rounded-xl m-3 p-6 space-y-4 max-w-lg mx-auto bg-gray-500 opacity-90">
+    <div className="m-3 p-6 space-y-4 w-2/3 max-w-5xl min-w-60 mx-auto bg-blue-400 opacity-90 border-2 border-black">
       <div className="flex justify-between items-center">
-        <i className="fas fa-cog fa-lg text-gray-400"></i>
+      <h2>{title}</h2>
       </div>
-      <p className="text-white">{description}</p>
+      <p className="text-black">{description}</p>
       {submittedBy && (
-        <p className="text-white">{`submitted by: ${submittedBy}`}</p>
+        <p className="text-black">{`submitted by: ${submittedBy}`}</p>
       )}
     </div>
   );
