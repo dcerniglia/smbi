@@ -17,6 +17,7 @@ export default function Card({
       <p className="text-black">{description}</p>
       {submittedBy ? (
         <p className="text-black">{`submitted by: ${submittedBy}`}</p>
+
       ) : null}
     </div>
   );
