@@ -48,7 +48,7 @@ export default function NewNotePage() {
   // }, [actionData]);
 
   return (
-    <div className="bg-black h-screen pt-6">
+    <div className="h-screen pt-6">
       <Card description="The idea should not be a small business (i.e. home cleaning service, landscaping, flower shop, etc.) or an existing business concept UNLESS you have a fresh take or angle on it. Obscure ideas are welcome as long as they could conceivably be brought to reality. Keep in mind that your idea will be voted and commented on. Your email and last name WILL NOT be displayed. " />
       <IdeasForm />
     </div>

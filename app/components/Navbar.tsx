@@ -9,37 +9,37 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-gray-500 p-4">
+    <nav className="bg-blue-200 p-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="text-white text-2xl font-bold">
+          <a href="/" className="text-black bold text-2xl">
             Steal My Business Idea
           </a>
         </div>
         <div className="hidden md:flex space-x-4">
-          <Link to="/" className="text-white hover:underline">
+          <Link to="/" className="text-black hover:underline">
             Home
           </Link>
-          <Link to="/submit" className="text-white hover:underline">
+          <Link to="/submit" className="text-black hover:underline">
             Submit
           </Link>
-          <Link to="/brainstorming" className="text-white hover:underline">
+          <Link to="/brainstorming" className="text-black hover:underline">
             Brainstorming
           </Link>
-          <Link to="/giveaway" className="text-white hover:underline">
+          <Link to="/giveaway" className="text-black hover:underline">
             $1M Ideas
           </Link>
-          <Link to="/blog" className="text-white hover:underline">
+          <Link to="/blog" className="text-black hover:underline">
             Blog
           </Link>
-          <Link to="/contact" className="text-white hover:underline">
+          <Link to="/contact" className="text-black hover:underline">
             Contact
           </Link>
         </div>
         <div className="md:hidden flex items-center">
           <button
             onClick={toggleMenu}
-            className="text-white hover:text-gray-200 focus:outline-none"
+            className="text-black hover:text-gray-200 focus:outline-none"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -63,25 +63,25 @@ export default function Navbar() {
           <div className="">
             <a
               href="/"
-              className="block text-white py-2 px-4 "
+              className="block text-black py-2 px-4 "
             >
               Home
             </a>
             <a
               href="/submit"
-              className="block text-white py-2 px-4 "
+              className="block text-black py-2 px-4 "
             >
               Submit an Idea By Form
             </a>
             <a
               href="/brainstorming"
-              className="block text-white py-2 px-4 "
+              className="block text-black py-2 px-4 "
             >
               The Magic of Brainstorming
             </a>
             <a
               href="/giveaway"
-              className="block text-white py-2 px-4 "
+              className="block text-black py-2 px-4 "
             >
               Give Away A Million Dollar Idea
             </a>
