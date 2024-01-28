@@ -15,10 +15,10 @@ export default function StatusBadge({
         <Icon icon="chart-line" size="lg" className="text-red-600 ps-2" tooltip="has business plan" />
       ) : null}
       {hasModel ? (
-        <Icon icon="file-lines" size="lg" className="text-green-600 ps-2" tooltip="favorite" />
+        <Icon icon="file-lines" size="lg" className="text-green-600 ps-2" tooltip="has financial model" />
       ) : null}
       {isFavorite ? (
-        <Icon icon="star" size="lg" className="text-yellow-400 ps-2" tooltip='has financial models' />
+        <Icon icon="star" size="lg" className="text-yellow-400 ps-2" tooltip='favorite' />
       ) : null}
     </div>
   );

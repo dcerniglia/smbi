@@ -9,13 +9,23 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-
+import faStylesheetUrl from'@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from "@fortawesome/fontawesome-svg-core";
 import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
 import Navbar from "./components/Navbar";
 
+
+// Prevent fontawesome from dynamically adding its css since we did it manually above
+// This prevents a flash of unstyled content
+config.autoAddCss = false;
+
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
+  {
+    rel: 'stylesheet',
+    href: faStylesheetUrl,
+  },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 

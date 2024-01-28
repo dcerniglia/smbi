@@ -23,7 +23,8 @@ import {
   faStarHalfStroke,
   faTruckFast,
   faChartLine,
-  faFileLines
+  faFileLines,
+  faComment
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -43,7 +44,8 @@ library.add(
     faTruckFast,
     faUser,
     faChartLine,
-    faFileLines
+    faFileLines,
+    faComment
 );
 
 export default function Icon({
