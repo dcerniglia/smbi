@@ -1,4 +1,4 @@
-app = "smbi-d250"
+app = "smbi"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = [ ]

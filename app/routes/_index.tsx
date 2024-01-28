@@ -6,7 +6,7 @@ import { ideas } from "../../mockData";
 import { useOptionalUser } from "~/utils";
 import IdeasForm from "~/components/IdeasForm";
 
-export const meta: MetaFunction = () => [{ title: "Remix Notes" }];
+export const meta: MetaFunction = () => [{ title: "Steal My Business Idea" }];
 
 export default function Index() {
   const user = useOptionalUser();
