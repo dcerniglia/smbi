@@ -29,7 +29,7 @@ export default function Index() {
           </div>
           {ideas &&
             ideas.map((idea) => {
-              return <Card title={idea.title} description={idea.description} submittedBy={idea.submittedBy} />;
+              return <Card title={idea.title} description={idea.description} submittedBy={idea.submittedBy} hasModel={idea.hasModel} hasPlan={idea.hasPlan} isFavorite={idea.isFavorite} />;
             })}
         </div>
       </div>
