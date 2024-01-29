@@ -1,17 +1,23 @@
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
+import { ideas } from "../mockData";
 
 const prisma = new PrismaClient();
 
 async function seed() {
-  const email = "rachel@remix.run";
+  const email = "dcerniglia@gmail.com";
 
   // cleanup the existing database
   await prisma.user.delete({ where: { email } }).catch(() => {
     // no worries if it doesn't exist yet
   });
 
-  const hashedPassword = await bcrypt.hash("racheliscool", 10);
+  await prisma.idea.deleteMany().catch(() => {
+    // no worries if it doesn't exist yet
+  }
+  );
+
+  const hashedPassword = await bcrypt.hash("davidiscool", 10);
 
   const user = await prisma.user.create({
     data: {
@@ -40,6 +46,20 @@ async function seed() {
     },
   });
 
+  for (const idea of ideas) {
+    await prisma.idea.create({
+      data: {
+        title: idea.title,
+        description: idea.description,
+        date: new Date(idea.date),
+        submittedBy: idea.submittedBy,
+        hasModel: idea.hasModel,
+        hasPlan: idea.hasPlan,
+        isFavorite: idea.isFavorite,
+        isTaken: idea.isTaken,
+      },
+    });
+  }
   console.log(`Database has been seeded. 🌱`);
 }
 

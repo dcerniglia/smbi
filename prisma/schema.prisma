@@ -36,3 +36,15 @@ model Note {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId String
 }
+
+model Idea {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  date        DateTime @default(now())
+  submittedBy String?  // '?' indicates that this field is optional
+  hasModel    Boolean? @default(false)
+  hasPlan     Boolean? @default(false)
+  isFavorite  Boolean? @default(false)
+  isTaken     Boolean? @default(false)
+}
