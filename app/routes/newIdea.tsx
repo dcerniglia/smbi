@@ -44,8 +44,8 @@ export default function newIdea() {
           method="post"
           className="bg-blue-100 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2"
         >
-          <div className="flex">
-            <div className="mb-4 w-1/2">
+          <div className="lg:flex">
+            <div className="mb-4 lg:w-1/2">
               <label
                 className="block text-black text-sm font-bold mb-2"
                 htmlFor="firstName"
@@ -60,7 +60,7 @@ export default function newIdea() {
                 required
               />
             </div>
-            <div className="mb-4 ms-6 w-10/12">
+            <div className="mb-4 lg:ms-6 lg:w-10/12">
               <label
                 className="block text-black text-sm font-bold mb-2"
                 htmlFor="lastName"
