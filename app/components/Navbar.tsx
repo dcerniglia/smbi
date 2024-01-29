@@ -17,10 +17,10 @@ export default function Navbar() {
           </a>
         </div>
         <div className="hidden md:flex space-x-4">
-          <Link to="/" className="text-black hover:underline">
+          {/* <Link to="/" className="text-black hover:underline">
             Home
-          </Link>
-          <Link to="/submit" className="text-black hover:underline">
+          </Link> */}
+          <Link to="/newIdea" className="text-black hover:underline">
             Submit
           </Link>
           <Link to="/brainstorming" className="text-black hover:underline">
@@ -61,41 +61,23 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden">
           <div className="">
-            <a
-              href="/"
-              className="block text-black py-2 px-4 "
-            >
+            <a href="/" className="block text-black py-2 px-4 ">
               Home
             </a>
-            <a
-              href="/submit"
-              className="block text-black py-2 px-4 "
-            >
-              Submit an Idea By Form
+            <a href="/submit" className="block text-black py-2 px-4 ">
+              Submit an Idea
             </a>
-            <a
-              href="/brainstorming"
-              className="block text-black py-2 px-4 "
-            >
-              The Magic of Brainstorming
+            <a href="/brainstorming" className="block text-black py-2 px-4 ">
+              Brainstorming
             </a>
-            <a
-              href="/giveaway"
-              className="block text-black py-2 px-4 "
-            >
-              Give Away A Million Dollar Idea
+            <a href="/giveaway" className="block text-black py-2 px-4 ">
+              $1M Ideas
             </a>
-            <a
-              href="/contact"
-              className="block text-white py-2 px-4 "
-            >
+            <a href="/contact" className="block text-white py-2 px-4 ">
+              Blog
+            </a>
+            <a href="/blog" className="block text-white py-2 px-4 ">
               Contact
-            </a>
-            <a
-              href="/blog"
-              className="block text-white py-2 px-4 "
-            >
-              Blog Posts
             </a>
           </div>
         </div>

@@ -8,6 +8,7 @@ export default function Card({
   hasModel = false,
   hasPlan = false,
   isFavorite = false,
+  isTaken = false,
   date,
 }: {
   description: string;
@@ -16,6 +17,7 @@ export default function Card({
   isFavorite?: boolean;
   title?: string;
   submittedBy?: string;
+  isTaken ?: boolean;
   date?: Date;
 }) {
   return (

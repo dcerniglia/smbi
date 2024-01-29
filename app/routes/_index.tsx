@@ -1,15 +1,26 @@
-import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
+import { Link, json, useLoaderData } from "@remix-run/react";
 import Card from "~/components/Card";
-import Navbar from "~/components/Navbar";
-import { ideas } from "../../mockData";
 import { useOptionalUser } from "~/utils";
-import IdeasForm from "~/components/IdeasForm";
+import invariant from "tiny-invariant";
+import { getAllIdeas } from "~/models/idea.server";
+import { requireUserId } from "~/session.server";
+
 
 export const meta: MetaFunction = () => [{ title: "Steal My Business Idea" }];
 
+export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+  let ideas = await getAllIdeas();
+  if (!ideas) {
+    throw new Response("Not Found", { status: 404 });
+  }
+
+
+  return json(ideas);
+};
+
 export default function Index() {
-  const user = useOptionalUser();
+  const ideas = useLoaderData<typeof loader>();
   return (
     <main className="relative min-h-screen sm:justify-center">
       <div className="relative sm:pb-16">
@@ -29,7 +40,7 @@ export default function Index() {
           </div>
           {ideas &&
             ideas.map((idea) => {
-              return <Card title={idea.title} description={idea.description} submittedBy={idea.submittedBy} hasModel={idea.hasModel} hasPlan={idea.hasPlan} isFavorite={idea.isFavorite} />;
+              return <Card key={idea.id} title={idea.title} description={idea.description} submittedBy={'John Dunne'} hasModel={idea.hasModel === null ? undefined : idea.hasModel} hasPlan={idea.hasPlan ?? false} isFavorite={idea.isFavorite === null ? undefined : idea.isFavorite} isTaken={idea.isTaken || false} />;
             })}
         </div>
       </div>
