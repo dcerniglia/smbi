@@ -2,23 +2,23 @@ import Icon from "./Icon";
 import StatusBadge from "./StatusBadge";
 
 export default function Card({
-  description,
   title,
+  description,
   submittedBy,
   hasModel = false,
   hasPlan = false,
   isFavorite = false,
   isTaken = false,
   date,
-  id
+  id,
 }: {
+  title: string;
   description: string;
   hasModel?: boolean;
   hasPlan?: boolean;
   isFavorite?: boolean;
-  title?: string;
   submittedBy?: string;
-  isTaken ?: boolean;
+  isTaken?: boolean;
   date?: Date;
   id?: string;
 }) {
@@ -30,7 +30,7 @@ export default function Card({
           hasModel={hasModel}
           hasPlan={hasPlan}
           isFavorite={isFavorite}
-          to={`/ideas/${id}`}
+          canDelete={true}
         />
       </div>
       <p className="text-black">{description}</p>
@@ -38,7 +38,7 @@ export default function Card({
         {submittedBy ? (
           <p className="text-black font-light italic text-sm">{`Submitted By: ${submittedBy}`}</p>
         ) : null}
-      <Icon icon='comment' size="xl" tooltip="comments" />
+        <Icon icon="comment" size="xl" tooltip="comments" />
       </div>
     </div>
   );
