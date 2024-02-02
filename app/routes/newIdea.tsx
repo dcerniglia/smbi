@@ -15,11 +15,14 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   const email = formData.get("email");
   const title = formData.get("title")?.toString() || ""; // Convert FormDataEntryValue to string
   const description = formData.get("description")?.toString() || ""; // Convert FormDataEntryValue to string
+  const hasPlan = formData.get("hasPlan") || false;
+  const hasModel = formData.get("hasModel") || false;
   await createIdea({
     title,
     description,
+    hasPlan,
+    hasModel
   });
-  
 
   return redirect(`/`);
 };
@@ -149,7 +152,18 @@ export default function newIdea() {
               name="description"
               required
             />
+            <div className="flex flex-col">
+              <label>
+                <input type="checkbox" name="hasModel" className="me-2" />
+                Do you have a financial model?
+              </label>
+              <label>
+                <input type="checkbox" name="hasPlan" className="me-2" />
+                Do you have a business plan?
+              </label>
+            </div>
           </div>
+
           <div className="flex items-center justify-end">
             <button
               type="submit"
