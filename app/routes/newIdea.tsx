@@ -21,7 +21,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     title,
     description,
     hasPlan,
-    hasModel
+    hasModel,
   });
 
   return redirect(`/`);
@@ -154,11 +154,11 @@ export default function newIdea() {
             />
             <div className="flex flex-col">
               <label>
-                <input type="checkbox" name="hasModel" className="me-2" />
+                <input type="checkbox" name="hasModel" className="me-2" value="true" />
                 Do you have a financial model?
               </label>
               <label>
-                <input type="checkbox" name="hasPlan" className="me-2" />
+                <input type="checkbox" name="hasPlan" className="me-2" value="true" />
                 Do you have a business plan?
               </label>
             </div>

@@ -16,19 +16,24 @@ export function getAllIdeas() {
 
 export function createIdea({
   title,
-  description
+  description,
+  hasModel,
+  hasPlan
 }: {
   title: Idea["title"];
   description: Idea["description"];
   hasModel: any
   hasPlan: any
 }) {
+  
+  const hasModelBoolean = hasModel === "true" ? true : false
+  const hasPlanBoolean = hasPlan === "true" ? true : false
   return prisma.idea.create({
     data: {
       title,
       description,
-      hasModel: false, // Provide an initializer for the hasModel property
-      hasPlan: false
+      hasModel: hasModelBoolean,
+      hasPlan: hasPlanBoolean
     },
   });
 }
