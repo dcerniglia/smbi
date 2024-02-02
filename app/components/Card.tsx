@@ -31,6 +31,7 @@ export default function Card({
           hasPlan={hasPlan}
           isFavorite={isFavorite}
           to={`/ideas/${id}`}
+          canDelete={false}
         />
       </div>
       <p className="text-black">{description}</p>
