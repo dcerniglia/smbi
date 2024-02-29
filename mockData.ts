@@ -1,4 +1,5 @@
 export const ideas: Array<{
+    voteCount: any;
     id: string;
     title: string;
     description: string;
@@ -17,7 +18,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: true,
         hasPlan: false,
-        isFavorite: true
+        isFavorite: true,
+        voteCount: 0
     },
     {
         id: '',
@@ -27,7 +29,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: false,
         hasPlan: true,
-        isFavorite: false
+        isFavorite: false,
+        voteCount: 0
     },
     {
         id: '',
@@ -38,7 +41,8 @@ export const ideas: Array<{
         hasModel: true,
         hasPlan: false,
         isFavorite: true,
-        isTaken: true
+        isTaken: true,
+        voteCount: 0
     },
     {
         id: '',
@@ -48,7 +52,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: false,
         hasPlan: true,
-        isFavorite: true
+        isFavorite: true,
+        voteCount: 0
     },
     {
         id: '',
@@ -58,7 +63,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: true,
         hasPlan: false,
-        isFavorite: false
+        isFavorite: false,
+        voteCount: 0
     },
     {
         id: '',
@@ -68,7 +74,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: true,
         hasPlan: true,
-        isFavorite: true
+        isFavorite: true,
+        voteCount: 0
     },
     {
         id: '',
@@ -78,7 +85,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: false,
         hasPlan: true,
-        isFavorite: false
+        isFavorite: false,
+        voteCount: 0
     },
     {
         id: '',
@@ -88,7 +96,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: true,
         hasPlan: false,
-        isFavorite: true
+        isFavorite: true,
+        voteCount: 0
     },
     {
         id: '',
@@ -98,7 +107,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: false,
         hasPlan: true,
-        isFavorite: false
+        isFavorite: false,
+        voteCount: 0
     },
     {
         id: '',
@@ -108,7 +118,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: true,
         hasPlan: false,
-        isFavorite: true
+        isFavorite: true,
+        voteCount: 0
     },
     {
         id: '',
@@ -118,7 +129,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: true,
         hasPlan: true,
-        isFavorite: false
+        isFavorite: false,
+        voteCount: 0
     },
     {
         id: '',
@@ -128,7 +140,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: false,
         hasPlan: false,
-        isFavorite: true
+        isFavorite: true,
+        voteCount: 0
     },
     {
         id: '',
@@ -138,7 +151,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: true,
         hasPlan: true,
-        isFavorite: false
+        isFavorite: false,
+        voteCount: 0
     },
     {
         id: '',
@@ -148,7 +162,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: false,
         hasPlan: false,
-        isFavorite: true
+        isFavorite: true,
+        voteCount: 0
     },
     {
         id: '',
@@ -158,7 +173,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: true,
         hasPlan: true,
-        isFavorite: false
+        isFavorite: false,
+        voteCount: 0
     },
     {
         id: '',
@@ -168,7 +184,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: false,
         hasPlan: false,
-        isFavorite: true
+        isFavorite: true,
+        voteCount: 0
     },
     {
         id: '',
@@ -178,7 +195,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: true,
         hasPlan: true,
-        isFavorite: false
+        isFavorite: false,
+        voteCount: 0
     },
     {
         id: '',
@@ -188,7 +206,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: false,
         hasPlan: true,
-        isFavorite: true
+        isFavorite: true,
+        voteCount: 0
     },
     {
         id: '',
@@ -198,7 +217,8 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: true,
         hasPlan: false,
-        isFavorite: false
+        isFavorite: false,
+        voteCount: 0
     },
     {
         id: '',
@@ -208,6 +228,7 @@ export const ideas: Array<{
         date: new Date().toISOString(),
         hasModel: false,
         hasPlan: true,
-        isFavorite: true
+        isFavorite: true,
+        voteCount: 0
     }
 ]

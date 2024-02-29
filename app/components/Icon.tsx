@@ -26,6 +26,8 @@ import {
   faComment,
   faArrowRight,
   faTrashCan,
+  faThumbsDown,
+  faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -48,7 +50,9 @@ library.add(
   faFileLines,
   faComment,
   faArrowRight,
-  faTrashCan
+  faTrashCan,
+  faThumbsDown,
+  faThumbsUp,
 );
 
 export default function Icon({

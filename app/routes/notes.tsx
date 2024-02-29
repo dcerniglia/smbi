@@ -26,14 +26,14 @@ export default function NotesPage() {
         <Form action="/logout" method="post">
           <button
             type="submit"
-            className="rounded bg-slate-600 px-4 py-2 text-blue-100 hover:bg-blue-500 active:bg-blue-600"
+            className="rounded bg-slate-600 px-4 py-2 text-blue-100 hover:bg-black-500 active:bg-black-600"
           >
             Logout
           </button>
         </Form>
       </header>
 
-      <main className="flex h-full bg-white">
+      <main className="flex h-full bg-black">
         <div className="h-full w-80 border-r bg-gray-50">
           <Link to="new" className="block p-4 text-xl text-blue-500">
             + New Note
@@ -49,7 +49,7 @@ export default function NotesPage() {
                 <li key={note.id}>
                   <NavLink
                     className={({ isActive }) =>
-                      `block border-b p-4 text-xl ${isActive ? "bg-white" : ""}`
+                      `block border-b p-4 text-xl ${isActive ? "bg-black" : ""}`
                     }
                     to={note.id}
                   >

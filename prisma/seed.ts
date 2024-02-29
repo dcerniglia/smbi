@@ -30,21 +30,21 @@ async function seed() {
     },
   });
 
-  await prisma.note.create({
-    data: {
-      title: "My first note",
-      body: "Hello, world!",
-      userId: user.id,
-    },
-  });
+  // await prisma.note.create({
+  //   data: {
+  //     title: "My first note",
+  //     body: "Hello, world!",
+  //     userId: user.id,
+  //   },
+  // });
 
-  await prisma.note.create({
-    data: {
-      title: "My second note",
-      body: "Hello, world!",
-      userId: user.id,
-    },
-  });
+  // await prisma.note.create({
+  //   data: {
+  //     title: "My second note",
+  //     body: "Hello, world!",
+  //     userId: user.id,
+  //   },
+  // });
 
   for (const idea of ideas) {
     await prisma.idea.create({
@@ -57,6 +57,7 @@ async function seed() {
         hasPlan: idea.hasPlan,
         isFavorite: idea.isFavorite,
         isTaken: idea.isTaken,
+        voteCount: idea.voteCount,
       },
     });
   }

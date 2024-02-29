@@ -5,9 +5,10 @@ import { useOptionalUser } from "~/utils";
 import invariant from "tiny-invariant";
 import { getAllIdeas } from "~/models/idea.server";
 import { requireUserId } from "~/session.server";
+import { Button } from "@material-tailwind/react";
+
 
 export const meta: MetaFunction = () => [{ title: "Steal My Business Idea" }];
-
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   let ideas = await getAllIdeas();
   if (!ideas) {
@@ -23,17 +24,17 @@ export default function Index() {
     <main className="relative min-h-screen sm:justify-center">
       <div className="relative sm:pb-16">
         <div className="flex flex-col mt-40 ">
+          <img src="/assets/logo-text.svg" alt="" className="max-w-md self-center" />
           <div className="flex items-center justify-center mb-6">
+            
+            {/* image goes here */}
             <Link
-              to="/newIdea"
+              to="/new-idea"
               className="relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-bold rounded-full group"
             >
-              <span className="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
-              <span className="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-white opacity-100 group-hover:-translate-x-8"></span>
-              <span className="relative w-full text-left text-black transition-colors duration-200 ease-in-out group-hover:text-gray-900">
-                Submit Your Idea
-              </span>
-              <span className="absolute inset-0 border-2 border-white rounded-full"></span>
+            <Button placeholder={'submit an idea'}>
+            Submit an Idea
+            </Button>
             </Link>
           </div>
           {ideas &&
@@ -51,6 +52,8 @@ export default function Index() {
                     idea.isFavorite === null ? undefined : idea.isFavorite
                   }
                   isTaken={idea.isTaken || false}
+                  totalVoteCount={idea.voteCount}
+                  userVoteCount={0}
                 />
               );
             })}

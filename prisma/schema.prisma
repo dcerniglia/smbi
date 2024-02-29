@@ -15,7 +15,7 @@ model User {
   updatedAt DateTime @updatedAt
 
   password Password?
-  notes    Note[]
+  votes    Vote[]
 }
 
 model Password {
@@ -25,26 +25,30 @@ model Password {
   userId String @unique
 }
 
-model Note {
-  id    String @id @default(cuid())
-  title String
-  body  String
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  userId String
-}
 
 model Idea {
   id          String   @id @default(cuid())
   title       String
   description String
-  date        DateTime @default(now())
-  submittedBy String?  // '?' indicates that this field is optional
+  date        DateTime @updatedAt
+  voteCount   Int      @default(0)
+  submittedBy String?
   hasModel    Boolean? @default(false)
   hasPlan     Boolean? @default(false)
   isFavorite  Boolean? @default(false)
   isTaken     Boolean? @default(false)
+  votes       Vote[]
+}
+
+model Vote {
+  id    String @id @default(cuid())
+  value Int    @default(0)
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId String @unique
+
+  idea   Idea   @relation(fields: [ideaId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  ideaId String
+
+  @@unique([userId, ideaId])
 }

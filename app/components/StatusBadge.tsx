@@ -46,7 +46,7 @@ export default function StatusBadge({
           <Icon
             icon="arrow-right"
             size="lg"
-            className="text-blue-950   ps-2"
+            className="text-blue-500   ps-2"
             tooltip="favorite"
           />
         </Link>
